@@ -29,7 +29,7 @@ COPY assets/$INSTALL_FILE_1_PARTS assets/$CONFIG_RSP assets/$RUN_FILE assets/$PW
 RUN yum -y install unzip libaio bc initscripts net-tools openssl && \
     yum clean all && \
     cd $INSTALL_DIR && \
-    cat $INSTALL_FILE_1_PARTS > $INSTALL_FILE_1 \
+    cat $INSTALL_FILE_1_PARTS > $INSTALL_FILE_1 &&\
     unzip $INSTALL_FILE_1 && \
     rm $INSTALL_FILE_1 &&    \
     rpm -i Disk1/*.rpm &&    \
