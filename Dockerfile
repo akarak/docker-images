@@ -23,11 +23,12 @@ ENV ORACLE_BASE=/u01/app/oracle \
 
 ENV PATH=$ORACLE_HOME/bin:$PATH
 
-COPY assets/$INSTALL_FILE_1 assets/$CONFIG_RSP assets/$RUN_FILE assets/$PWD_FILE $INSTALL_DIR/
+COPY assets/$INSTALL_FILE_1* assets/$CONFIG_RSP assets/$RUN_FILE assets/$PWD_FILE $INSTALL_DIR/
 
 RUN yum -y install unzip libaio bc initscripts net-tools openssl && \
     yum clean all && \
     cd $INSTALL_DIR && \
+    cat $INSTALL_FILE_1* > $INSTALL_FILE_1 \
     unzip $INSTALL_FILE_1 && \
     rm $INSTALL_FILE_1 &&    \
     rpm -i Disk1/*.rpm &&    \
