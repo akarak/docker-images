@@ -10,7 +10,8 @@
 
 FROM oraclelinux:7-slim
 
-MAINTAINER Alexey Karak <alexey.karak@gmail.com>
+LABEL maintainer="Alexey Karak <alexey.karak@gmail.com>" \
+    url="github.com/akarak/docker-oracle-xe-11g"
 
 ENV ORACLE_BASE=/u01/app/oracle \
     ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe \
